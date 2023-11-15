@@ -4,7 +4,7 @@ return {
   config = function()
     require('dashboard').setup {
 	theme = "doom",
-	config = {    
+	config = {
 		header = {"",
 "",
 "                           ",
@@ -64,12 +64,21 @@ require("mason").setup({
 end,
 },
 
-{"williamboman/mason-lspconfig.nvim"},
-{"neovim/nvim-lspconfig",
+{"williamboman/mason-lspconfig.nvim",
 config = function()
-lspconfig = require("lspconfig")
-lspconfig.pyright.setup{}
+	require("mason-lspconfig").setup({
+	ensure_installed = {
+	"lua_ls"
+	},
+	handlers = {
+	function(ls) require("lspconfig")[ls].setup({})
+	end
+	}
+})
 end,
+},
+{"neovim/nvim-lspconfig",
+event = {"BufReadPre","BufNewFile"}
 },
 
 --DBSESSION
