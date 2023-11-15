@@ -66,7 +66,7 @@ end,
 
 {"williamboman/mason-lspconfig.nvim"},
 {"neovim/nvim-lspconfig",
-nfig = function()
+config = function()
 lspconfig = require("lspconfig")
 lspconfig.pyright.setup{}
 end,
