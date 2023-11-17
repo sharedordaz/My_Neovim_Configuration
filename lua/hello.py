@@ -1,6 +1,2 @@
-def wwww():
-    pass
-
-
-
+function 
 
