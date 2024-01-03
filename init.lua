@@ -25,7 +25,7 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.opt.swapfile = false 
 
-vim.opt.backupdir = "~/.cache/vim"
+vim.opt.backupdir = "~/.cache/nvim"
 
 vim.opt.tabstop=8
 vim.opt.expandtab= true
@@ -33,8 +33,8 @@ vim.opt.shiftwidth = 4
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 
---require'lspconfig'.pyright.setup{}
 
+--LOADING OF LAZY.VIM
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -47,13 +47,17 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-vim.g.mapleader = " "
 
+-----THE KEYS CONFIGURED BY MYSELF-----
+require("keys")
 
 require("lazy").setup("plugins")
 
 --AFTER PLUGINS CHARGED
 
+
+
+--APPLY THEME
 vim.cmd.colorscheme("PaperColor")
 
 --ENABLE TO DO SET DEFAULT NEOTREES
