@@ -1,17 +1,6 @@
 --GLOBAL VARIABLES
-vim.g.VIMOS= ""
-
-function CheckOS()
-    if vim.fn.has("win32") == 1 then
-        print("Estás en Windows.")
-    elseif vim.fn.has("unix") == 1 then
-        print("Estás en un entorno Unix (Linux, macOS, etc.).")
-    else
-        print("No se puede determinar el sistema operativo.")
-    end
-end
-
-CheckOS()
+--checkos = require("checkos")
+test = require("lua.checkOS")
 
 vim.g.PLUGINSPATH="/lua/plugins.lua"
 
