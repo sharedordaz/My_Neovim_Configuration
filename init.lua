@@ -1,5 +1,4 @@
---GLOBAL VARIABLES
---checkos = require("checkos")
+--CHECK OS and apply PATHS
 test = require("lua.checkOS")
 
 local vimOS = vim.g.vimOS

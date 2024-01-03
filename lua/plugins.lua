@@ -30,7 +30,7 @@ center = {
                 },
 	{
 		icon = "◉",
-		desc = " Edit init.lua",
+		desc = "Edit init.lua",
 		desc_hl = "String",
 		action = "edit $MYVIMRC"
 	},
@@ -69,7 +69,6 @@ config = function()
 	require("mason-lspconfig").setup({
 	ensure_installed = {
 	"lua_ls"
-        
 	},
 	handlers = {
 	function(ls) require("lspconfig")[ls].setup({})

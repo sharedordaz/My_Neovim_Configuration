@@ -5,5 +5,5 @@
     else
         vim.g.vimOS = "other"
     end
-    print("Estás en " .. vim.g.vimOS)
+    --print("Estás en " .. vim.g.vimOS)
 
