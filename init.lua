@@ -2,8 +2,17 @@
 --checkos = require("checkos")
 test = require("lua.checkOS")
 
-vim.g.PLUGINSPATH="/lua/plugins.lua"
+local vimOS = vim.g.vimOS
 
+
+if vimOS == "windows" then
+    vim.g.plugPATH="~\\AppData\\Local\\nvim\\lua\\plugins.lua"
+
+elseif vimOS == "unix" then
+    vim.g.plugPATH="~/.config/nvim/lua/plugins.lua"
+else
+    vim.g.plugPATH=nil
+end
 
 --SETTINGS
 vim.opt.nu = true

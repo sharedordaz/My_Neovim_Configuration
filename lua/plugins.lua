@@ -38,7 +38,7 @@ center = {
 		icon = "◉",
 		desc = "Edit plugins.lua",
 		desc_hl = "String",
-		action = "edit '$NVIM/lua/plugins.lua'"
+		action = "execute 'edit' g:plugPATH"
 	}
 	}
 
