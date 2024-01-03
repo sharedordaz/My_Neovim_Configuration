@@ -24,10 +24,10 @@ center = {
 
 	{
 		icon = "◉",
-		desc = " Go to last session",
+		desc =  "Go to Last Session",
 		desc_hl = "String",
-		action = "SessionLoad autosave_neovim_last_session"
-	},
+		action = "SessionLoad autosave_neovim_last_session",
+                },
 	{
 		icon = "◉",
 		desc = " Edit init.lua",
@@ -36,9 +36,9 @@ center = {
 	},
 	{
 		icon = "◉",
-		desc = " Edit Plugins",
+		desc = "Edit plugins.lua",
 		desc_hl = "String",
-		action = "edit ~/.config/nvim/lua/plugins.lua"
+		action = "edit '$NVIM/lua/plugins.lua'"
 	}
 	}
 
@@ -69,6 +69,7 @@ config = function()
 	require("mason-lspconfig").setup({
 	ensure_installed = {
 	"lua_ls"
+        
 	},
 	handlers = {
 	function(ls) require("lspconfig")[ls].setup({})
@@ -137,6 +138,17 @@ require("copilot").setup({})
 end,
 },--]]
 
+--SURROUND
+{
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+},
 --MINI COMPLETITION
 { 'echasnovski/mini.nvim', version = false,
 config = function()
@@ -145,6 +157,68 @@ end,
 
 },
 
+--FORMATTER
+{ 'mhartington/formatter.nvim',
+config = function()
+local util = require "formatter.util"
 
+-- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
+require("formatter").setup {
+  -- Enable or disable logging
+  logging = true,
+  -- Set the log level
+  log_level = vim.log.levels.WARN,
+  -- All formatter configurations are opt-in
+  filetype = {
+    -- Formatter configurations for filetype "lua" go here
+    -- and will be executed in order
+    lua = {
+      -- "formatter.filetypes.lua" defines default configurations for the
+      -- "lua" filetype
+      require("formatter.filetypes.lua").stylua,
+
+      -- You can also define your own configuration
+      function()
+        -- Supports conditional formatting
+        if util.get_current_buffer_file_name() == "special.lua" then
+          return nil
+        end
+
+        -- Full specification of configurations is down below and in Vim help
+        -- files
+        return {
+          exe = "stylua",
+          args = {
+            "--search-parent-directories",
+            "--stdin-filepath",
+            util.escape_path(util.get_current_buffer_file_path()),
+            "--",
+            "-",
+          },
+          stdin = true,
+        }
+      end
+    },
+
+    -- Use the special "*" filetype for defining formatter configurations on
+    -- any filetype
+    ["*"] = {
+      -- "formatter.filetypes.any" defines default configurations for any
+      -- filetype
+      require("formatter.filetypes.any").remove_trailing_whitespace
+    }
+  }
+}
+
+
+end,
+},
+
+
+{'lambdalisue/suda.vim'}
 
 }
+
+
+
+

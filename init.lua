@@ -1,3 +1,21 @@
+--GLOBAL VARIABLES
+vim.g.VIMOS= ""
+
+function CheckOS()
+    if vim.fn.has("win32") == 1 then
+        print("Estás en Windows.")
+    elseif vim.fn.has("unix") == 1 then
+        print("Estás en un entorno Unix (Linux, macOS, etc.).")
+    else
+        print("No se puede determinar el sistema operativo.")
+    end
+end
+
+CheckOS()
+
+vim.g.PLUGINSPATH="/lua/plugins.lua"
+
+
 --SETTINGS
 vim.opt.nu = true
 vim.opt.guicursor = ""
@@ -11,6 +29,12 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.swapfile = false 
 
 vim.opt.backupdir = "~/.cache/vim"
+
+vim.opt.tabstop=8
+vim.opt.expandtab= true
+vim.opt.shiftwidth = 4
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
 --require'lspconfig'.pyright.setup{}
 
