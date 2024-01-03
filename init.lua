@@ -1,5 +1,5 @@
 --CHECK OS and apply PATHS
-test = require("lua.checkOS")
+test = require("checkOS")
 
 local vimOS = vim.g.vimOS
 
