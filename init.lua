@@ -33,6 +33,8 @@ vim.opt.shiftwidth = 4
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 
+vim.cmd('set tags=./tags;')
+
 
 --LOADING OF LAZY.VIM
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -51,11 +53,16 @@ vim.opt.rtp:prepend(lazypath)
 -----THE KEYS CONFIGURED BY MYSELF-----
 require("keys")
 
+require("scripts")
+
 require("lazy").setup("plugins")
 
 --AFTER PLUGINS CHARGED
-
-
+--Apply illuminate vim pluging
+vim.g.Illuminate_useDeprecated = 1
+--hi def IlluminatedWordText gui=underline
+--hi def IlluminatedWordRead gui=underline
+--hi def IlluminatedWordWrite gui=underline
 
 --APPLY THEME
 vim.cmd.colorscheme("PaperColor")
