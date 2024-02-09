@@ -19,6 +19,8 @@ cmdline = {
       help = { pattern = "^:%s*he?l?p?%s+", icon = "󰋖" },
       substitute = { pattern = {"^:s ", "^:'<,'>s "}, conceal = false, icon = "󰛔", lang = "vim"},
       edit = { pattern = {"^:e ", "^:edit "}, conceal = false, icon = "", lang = "vim"},
+      which_key = { pattern = {"^:WhichKey "}, conceal = false, icon = "󰥻", lang = "vim"},
+
 
 
       input = {}, -- Used by input()

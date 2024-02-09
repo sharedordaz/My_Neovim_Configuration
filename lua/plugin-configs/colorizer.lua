@@ -21,7 +21,8 @@ local css = {
 local vim = {
     'vim';
     'lua';
-    {mode = 'foreground'}
+    {   names = true;
+        mode = 'foreground'}
 }
 
 

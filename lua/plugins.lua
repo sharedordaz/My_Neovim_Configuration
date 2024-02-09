@@ -230,12 +230,9 @@ end
     vim.o.timeoutlen = 300
   end,
   opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
+    mode = 'n',
   }
 },
-
 { "max397574/colortils.nvim",
   cmd = "Colortils",
   config = function()
@@ -247,5 +244,4 @@ end
         require('colorizer').setup(myconf.css, myconf.general_config)
     end,
 }
-
 }

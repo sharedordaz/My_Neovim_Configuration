@@ -15,13 +15,15 @@ vim.api.nvim_set_keymap('n', "lsp", ':LspInfo<CR>', {noremap=true, silent = fals
 
 
 
-
 --Fast terminal shortcuts
 vim.api.nvim_set_keymap('n', ";;", ':', {noremap=true, silent = false})
 vim.api.nvim_set_keymap('n', ";l", ':lua<Space>', {noremap=true, silent = false})
 vim.api.nvim_set_keymap('n', ";1", ':!', {noremap=true, silent = false})
 
 vim.api.nvim_set_keymap('n', ";h", ':help<Space>', {noremap=true, silent = false})
+
+vim.keymap.set('n', 'wk', ":WhichKey<Space>", {noremap=true, silent = false})
+
 
 --Utility
 vim.api.nvim_set_keymap('n', "<leader>/", ':noh<CR>', {noremap=true, silent = true})
@@ -51,3 +53,8 @@ vim.api.nvim_set_keymap('i', '{', '{}<Left>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', "'", "''<Left>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '"', '""<Left>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<', '<><Left>', { noremap = true, silent = true })
+
+
+--Colortils
+vim.keymap.set('n', 'css', ":Colortils css list<CR>", {})
+vim.keymap.set('n', 'cl', ":Colortils picker #000000<CR>", {})
