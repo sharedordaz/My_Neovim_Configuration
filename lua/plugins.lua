@@ -191,5 +191,61 @@ end
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
 -- or                              , branch = '0.1.x',
       dependencies = { 'nvim-lua/plenary.nvim' }
+},
+
+---Display Images? Hologram
+
+-- Display ascii images from NeoTree
+-- ERROR: Error detected while processing /home/sharedordaz/.config/nvim/init.lua:
+-- image.nvim: magick rock not found, please install it and restart your editor
+--[[{ 'samodostal/image.nvim',
+    requires = {
+        'nvim-lua/plenary.nvim',
+        'm001ek/baleia.nvim'
+    },
+    config = function()
+        require('image').setup {
+         render = {
+        min_padding = 5,
+        show_label = true,
+	show_image_dimensions = true,
 }
+        use_dither = true,
+        foreground_color = false,
+        background_color = false
+        },
+        events = {
+        update_on_nvim_resize = true,
+        },
+        }
+    end,
+
+},]]--
+
+{
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  init = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+  end,
+  opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+},
+
+{ "max397574/colortils.nvim",
+  cmd = "Colortils",
+  config = function()
+    require("colortils").setup(require('plugin-configs.colortils'))
+  end,},
+{ 'norcalli/nvim-colorizer.lua',
+    config = function()
+        local myconf = require('plugin-configs.colorizer')
+        require('colorizer').setup(myconf.css, myconf.general_config)
+    end,
+}
+
 }

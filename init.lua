@@ -33,6 +33,14 @@ vim.opt.shiftwidth = 4
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 
+vim.o.updatetime= 750
+vim.o.display = vim.o.display
+
+vim.o.autoindent = true
+vim.o.smartindent = true
+
+vim.opt.termguicolors = true
+
 vim.cmd('set tags=./tags;')
 
 
@@ -123,4 +131,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.lsp.buf.format { async = true }
     end, opts)
   end})
-
