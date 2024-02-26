@@ -32,6 +32,8 @@ local general_config = {
     RRGGBBAA = true;
     RGB = true;
     RRGGBB = true;
+    rgb_fn = true;
+    hsl_fn = true;
     vim;
 }
 

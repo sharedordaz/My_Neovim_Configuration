@@ -193,34 +193,17 @@ end
       dependencies = { 'nvim-lua/plenary.nvim' }
 },
 
----Display Images? Hologram
+{ 'm00qek/baleia.nvim'},
 
--- Display ascii images from NeoTree
--- ERROR: Error detected while processing /home/sharedordaz/.config/nvim/init.lua:
--- image.nvim: magick rock not found, please install it and restart your editor
---[[{ 'samodostal/image.nvim',
-    requires = {
-        'nvim-lua/plenary.nvim',
-        'm001ek/baleia.nvim'
-    },
+{
+    'https://github.com/adelarsq/image_preview.nvim',
+    event = 'VeryLazy',
     config = function()
-        require('image').setup {
-         render = {
-        min_padding = 5,
-        show_label = true,
-	show_image_dimensions = true,
-}
-        use_dither = true,
-        foreground_color = false,
-        background_color = false
-        },
-        events = {
-        update_on_nvim_resize = true,
-        },
-        }
-    end,
+        require("image_preview").setup()
+    end
+},
 
-},]]--
+--Which key
 
 {
   "folke/which-key.nvim",
@@ -233,6 +216,7 @@ end
     mode = 'n',
   }
 },
+--------COLORTILS, to see HEX COLORS AND RGB---
 { "max397574/colortils.nvim",
   cmd = "Colortils",
   config = function()
@@ -243,5 +227,52 @@ end
         local myconf = require('plugin-configs.colorizer')
         require('colorizer').setup(myconf.css, myconf.general_config)
     end,
+},
+
+-----CHAFA TO SEE IMAGES
+{
+  "princejoogie/chafa.nvim",
+  requires = {
+    "nvim-lua/plenary.nvim",
+    "m00qek/baleia.nvim"
+  },
+
+  config = function()
+    require("chafa").setup({
+    render = {
+    min_padding = 5,
+    show_label = true,
+    },
+    events = {
+    update_on_nvim_resize = false,
+    },
+})
+end,
+},
+
+--[[{
+  "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup(require('plugin-configs.chatgpt'))
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "folke/trouble.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+}--]]
+-- Comment.nvim: gcc to comment
+{
+    'numToStr/Comment.nvim',
+    opts = {
+            },
+    config = function()
+        require('Comment').setup()
+    end,
+    lazy = false,
 }
+
+
 }

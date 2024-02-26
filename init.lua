@@ -1,3 +1,6 @@
+--DEPENDENCIES:
+--cUrl
+
 --CHECK OS and apply PATHS
 test = require("checkOS")
 
