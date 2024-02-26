@@ -30,7 +30,7 @@ vim.opt.swapfile = false
 
 vim.opt.backupdir = "~/.cache/nvim"
 
-vim.opt.tabstop=8
+vim.opt.tabstop=4
 vim.opt.expandtab= true
 vim.opt.shiftwidth = 4
 vim.opt.autoindent = true
@@ -43,9 +43,6 @@ vim.o.autoindent = true
 vim.o.smartindent = true
 
 vim.opt.termguicolors = true
-
-vim.cmd('set tags=./tags;')
-
 
 --LOADING OF LAZY.VIM
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

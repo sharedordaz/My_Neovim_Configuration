@@ -272,7 +272,12 @@ end,
         require('Comment').setup()
     end,
     lazy = false,
-}
+},
+--Indent Blank Line
+{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
+
+
+
 
 
 }
