@@ -13,6 +13,10 @@ vim.api.nvim_set_keymap('n', "ms", ':Mason<CR>', {noremap=true, silent = true})
 --Open :Lspinfo
 vim.api.nvim_set_keymap('n', "lsp", ':LspInfo<CR>', {noremap=true, silent = false})
 
+--Open :LiveServerStart
+vim.api.nvim_set_keymap('n', "ls", ':LiveServerStart<CR>', {noremap=true, silent = true})
+vim.api.nvim_set_keymap('n', "lss", ':LiveServerStop<CR>', {noremap=true, silent = true})
+
 
 
 --Fast terminal shortcuts
@@ -58,3 +62,5 @@ vim.api.nvim_set_keymap('i', '<', '<><Left>', { noremap = true, silent = true })
 --Colortils
 vim.keymap.set('n', 'css', ":Colortils css list<CR>", {})
 vim.keymap.set('n', 'cl', ":Colortils picker #000000<CR>", {})
+
+

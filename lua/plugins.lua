@@ -274,7 +274,16 @@ end,
     lazy = false,
 },
 --Indent Blank Line
-{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
+{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+
+--Live Server
+{
+        'barrett-ruth/live-server.nvim',
+        config = function()
+            require('live-server').setup()
+        end
+}
+
 
 
 
