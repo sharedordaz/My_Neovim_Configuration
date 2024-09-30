@@ -286,7 +286,7 @@ end,
 
 --Read Office Files
 {
-'https://gitlab.com/Syndamia/texty-office.vim'
+    'https://gitlab.com/Syndamia/texty-office.vim'
 }
 
 
