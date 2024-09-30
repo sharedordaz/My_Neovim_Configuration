@@ -1,5 +1,11 @@
 --DEPENDENCIES:
 --cUrl
+--Run the following command:
+--git clone --recurse-submodules https://gitlab.com/Syndamia/texty-office.git && cd texty-office && cmake . && make && cp texty-office /bin/texty-office
+
+--npm install -g live-server
+
+
 
 --CHECK OS and apply PATHS
 test = require("checkOS")
