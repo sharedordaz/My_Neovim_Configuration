@@ -98,8 +98,7 @@ event = {"BufReadPre","BufNewFile"}
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
 -- or                              , branch = '0.1.x',
       dependencies = { 'nvim-lua/plenary.nvim' }
-    },
-       "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    } 
     }
 },
 --LUALINE
@@ -114,7 +113,7 @@ event = {"BufReadPre","BufNewFile"}
   dependencies = { 'nvim-tree/nvim-web-devicons'}
 },
 --THEMES
-{ "EdenEast/nightfox.nvim" },
+--{ "EdenEast/nightfox.nvim" },
 {"ku1ik/vim-monokai"},
 {"NLKNguyen/papercolor-theme"},
 
