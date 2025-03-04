@@ -202,7 +202,7 @@ end,
   dependencies = { 'nvim-tree/nvim-web-devicons'}
 },
 --THEMES
-{ "EdenEast/nightfox.nvim" },
+--{ "EdenEast/nightfox.nvim" },
 {"ku1ik/vim-monokai"},
 {"NLKNguyen/papercolor-theme"},
 
